@@ -1,6 +1,6 @@
 const Task = () => {
   return (
-    <div>
+    <div className="">
         
     </div>
   )

@@ -1,9 +1,9 @@
 const Footer = () => {
   return (
-    <footer>
-        Footer
-    </footer>
-  )
-}
+	<footer>
+		<span>Made with ♥️ by Gamedemons</span>
+	</footer>
+  );
+};
 
-export default Footer
+export default Footer;

@@ -10,11 +10,26 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --button-color: rgb(0, 0, 0);
+  --button-bgcolor: white;
 }
 
 body {
   margin: 0;
   padding: 0;
+}
+
+button {
+  color: var(--button-color);
+  background-color: var(--button-bgcolor);
+  border: 1px solid var(--button-color);
+  transition: color 0.4s, background-color 0.4s, box-shadow 0.4s;
+}
+button:hover {
+  color: var(--button-bgcolor);
+  background-color: var(--button-color);
+  box-shadow: 8px 8px 10px greenyellow;
 }
 
 @media (prefers-color-scheme: dark) {
