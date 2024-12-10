@@ -1,11 +1,17 @@
-const TaskBoard = () => {
+import Task from "./Task"
+
+const TaskBoard = (props: any) => {
   return (
     <div className="task_board">
-        <h2 className="task_board_type">
-            New Task
-        </h2>
+        <span className="task_board_type">
+            {props.type}
+        </span>
         <ul className="task_list">
-
+            <Task></Task>
+            <Task></Task>
+            <Task></Task>
+            <Task></Task>
+            <Task></Task>
         </ul>
     </div>
   )

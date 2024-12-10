@@ -30,6 +30,7 @@ button:hover {
   color: var(--button-bgcolor);
   background-color: var(--button-color);
   box-shadow: 8px 8px 10px greenyellow;
+  cursor: cell;
 }
 
 @media (prefers-color-scheme: dark) {
