@@ -1,4 +1,4 @@
-import TaskBoard from "./UI/TaskBoard"
+import TaskBoard from "../UI/TaskBoard"
 
 const Main = () => {
     let boardTypes: string[] = ["New Task", "In Progress", "Completed"];

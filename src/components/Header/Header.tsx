@@ -1,4 +1,4 @@
-import NewTaskDropdown from "./UI/NewTaskDropdown";
+import NewTaskDropdown from "../UI/NewTaskDropdown";
 
 const Header = () => {
 	let mouseDownAnimation = (e: Event) => {
