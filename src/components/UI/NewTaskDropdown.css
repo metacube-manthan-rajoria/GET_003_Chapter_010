@@ -16,3 +16,79 @@
 
     width: 80%;
 }
+
+/* Timestamp */
+#new_task_dialog_timestamp_wrapper {
+    display: flex;
+    gap: 0.4rem;
+}
+#new_task_dialog input[type="date"] {
+    width: 18px;
+    padding: 0.4rem;
+
+    border: 0;
+    border-radius: 50%;
+    outline: none;
+}
+#new_task_dialog input[type="time"] {
+    display: flex;
+    justify-content: flex-end;
+
+    width: 20px;
+    padding: 0.4rem;
+
+    border: 0;
+    border-radius: 50%;
+    outline: none;
+}
+
+/* Button */
+#new_task_dialog_button_wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+#new_task_add_button {
+    background-color: lightgreen;
+    color: white;
+    border: 5px solid limegreen;
+    transition: background-color 0.4s;
+}
+#new_task_add_button:hover {
+    background-color: limegreen;
+}
+
+#new_task_cancel_button {
+    background-color: cornflowerblue;
+    color: white;
+    border: 5px solid blue;
+    transition: background-color 0.4s;
+}
+#new_task_cancel_button:hover {
+    background-color: blue;
+}
+
+/* Utility */
+.flat {
+    outline: none;
+    border: 0;
+    border-radius: 0.4rem;
+    background-color: white;
+}
+
+.new_task_dialog_element {
+    margin: 1rem;
+}
+
+.flat_button {
+    background-color: white;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 800;
+
+    border: 0px solid black;
+    border-radius: 0.4rem;
+
+    padding: 1rem;
+}
