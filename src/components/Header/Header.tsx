@@ -11,8 +11,15 @@ const Header = () => {
 	}
 
 	let [newTaskDialogVisible, setNewTaskDialogVisible] = useState(false);
-	let addTaskToList = (title:string) => {
-		console.log(title)
+	let addTaskToList = (
+		title:string, 
+		note: string, 
+		status: string, 
+		priority: string, 
+		date: string, 
+		time: string
+	) => {
+		console.log(title, note, date, time, status, priority)
 		setNewTaskDialogVisible(false)
 	}
 	let newTaskCancel = () => {
