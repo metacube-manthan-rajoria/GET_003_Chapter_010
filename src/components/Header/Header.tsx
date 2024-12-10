@@ -1,4 +1,5 @@
 import "./Header.css"
+import { useState } from "react";
 import NewTaskDropdown from "../UI/NewTaskDropdown";
 
 const Header = () => {
@@ -9,8 +10,13 @@ const Header = () => {
 		(e.target as HTMLElement).style.scale = "1";
 	}
 
-	let showNewTaskDialog = () => {
-		
+	let [newTaskDialogVisible, setNewTaskDialogVisible] = useState(false);
+	let addTaskToList = (title:string) => {
+		console.log(title)
+		setNewTaskDialogVisible(false)
+	}
+	let newTaskCancel = () => {
+		setNewTaskDialogVisible(false)
 	}
 
 	return (
@@ -22,12 +28,14 @@ const Header = () => {
 				id="add_task_button" 
 				onMouseDown={(e:any)=>{mouseDownAnimation(e)}} 
 				onMouseUp={(e:any) => {mouseUpAnimation(e)}}
-				onClick={()=>{showNewTaskDialog()}}
+				onClick={()=>{setNewTaskDialogVisible(true)}}
 			>
 				Add New Task
 			</button>
-{/* 
-			<NewTaskDropdown display=""></NewTaskDropdown> */}
+
+			{
+				newTaskDialogVisible ? <NewTaskDropdown addNewTask={addTaskToList} cancelTask={newTaskCancel}></NewTaskDropdown> : ""
+			}
 		</header>
 	);
 };

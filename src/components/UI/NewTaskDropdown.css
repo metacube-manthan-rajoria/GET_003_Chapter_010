@@ -17,11 +17,38 @@
     width: 80%;
 }
 
+/* Singular Components */
+#new_task_title {
+    padding: 1.5rem;
+    padding-left: 1rem;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+#new_task_note {
+    padding: 1.5rem;
+    padding-left: 1rem;
+    min-height: 5rem;
+    max-height: 15rem;
+    resize: vertical;
+
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
 /* Timestamp */
-#new_task_dialog_timestamp_wrapper {
+#new_task_dialog_metadata {
     display: flex;
+    justify-content: center;
     gap: 0.4rem;
 }
+
+#new_task_dialog_metadata > select{
+    width: 45%;
+    text-align: center;
+}
+
 #new_task_dialog input[type="date"] {
     width: 18px;
     padding: 0.4rem;
@@ -50,7 +77,7 @@
 }
 
 #new_task_add_button {
-    background-color: lightgreen;
+    background-color: #6aff6a;
     color: white;
     border: 5px solid limegreen;
     transition: background-color 0.4s;
