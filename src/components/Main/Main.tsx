@@ -6,9 +6,11 @@ const Main = () => {
     return (
         <main>
             <div id="task_board_wrapper">
-                {boardTypes.map((boardType: string) => { 
-                    return <TaskBoard type={boardType} key={boardType}/>
-                })}
+                {
+                    boardTypes.map(
+                        (boardType: string) => <TaskBoard type={boardType} key={boardType}/>
+                    )
+                }
             </div>
         </main>
     )
