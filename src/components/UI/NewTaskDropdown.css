@@ -60,13 +60,13 @@
 }
 
 #new_task_cancel_button {
-    background-color: cornflowerblue;
+    background-color: coral;
     color: white;
-    border: 5px solid blue;
+    border: 5px solid red;
     transition: background-color 0.4s;
 }
 #new_task_cancel_button:hover {
-    background-color: blue;
+    background-color: red;
 }
 
 /* Utility */
