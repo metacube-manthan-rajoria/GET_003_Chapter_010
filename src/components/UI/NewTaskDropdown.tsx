@@ -11,12 +11,13 @@ const NewTaskDropdown = (props: any) => {
 
     let addTask = () => {
         let title = taskTitle.current ? (taskTitle.current as HTMLInputElement).value : "";
-        let note = taskTitle.current ? (taskTitle.current as HTMLInputElement).value : "";
-        let status = taskTitle.current ? (taskTitle.current as HTMLInputElement).value : "";
-        let priority = taskTitle.current ? (taskTitle.current as HTMLInputElement).value : "";
-        let date = taskTitle.current ? (taskTitle.current as HTMLInputElement).value : "";
-        let time = taskTitle.current ? (taskTitle.current as HTMLInputElement).value : "";
-        props.addNewTask(title);
+        let note = taskNote.current ? (taskNote.current as HTMLInputElement).value : "";
+        let status = taskStatus.current ? (taskStatus.current as HTMLInputElement).value : "new";
+        let priority = taskPriority.current ? (taskPriority.current as HTMLInputElement).value : "none";
+        let date = taskDate.current ? (taskDate.current as HTMLInputElement).value : "";
+        let time = taskTime.current ? (taskTime.current as HTMLInputElement).value : "";
+
+        props.addNewTask(title, note, status, priority, date, time);
     }
 
     return (
@@ -28,17 +29,17 @@ const NewTaskDropdown = (props: any) => {
                     <input type="date" name="new_task_date" ref={taskDate} id="" className="flat"/>
                     <input type="time" name="new_task_time" ref={taskTime} id="" />
                     <select name="" ref={taskStatus} id="" className="flat">
-                        <option value="">New</option>
-                        <option value="">In Progress</option>
-                        <option value="">Completed</option>
+                        <option value="new">New</option>
+                        <option value="inprogress">In Progress</option>
+                        <option value="complete">Completed</option>
                     </select>
                     <select name="" ref={taskPriority} id="" className="flat">
-                        <option value="">Highest</option>
-                        <option value="">High</option>
-                        <option value="">Normal</option>
-                        <option value="">Low</option>
-                        <option value="">Lowest</option>
-                        <option value="">None</option>
+                        <option value="highest">Highest</option>
+                        <option value="high">High</option>
+                        <option value="normal">Normal</option>
+                        <option value="low">Low</option>
+                        <option value="lowest">Lowest</option>
+                        <option value="none">None</option>
                     </select>
                 </div>
 
