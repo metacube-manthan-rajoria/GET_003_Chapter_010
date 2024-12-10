@@ -1,0 +1,19 @@
+footer {
+	display: grid;
+	justify-content: center;
+	align-self: end;
+
+	padding: 1rem;
+}
+
+footer>span {
+	margin-bottom: 1rem;
+	font-size: 1.5rem;
+	transition: scale 0.4s, letter-spacing 0.4s, text-shadow 0.4s;
+}
+
+footer>span:hover {
+	scale: 1.05;
+	letter-spacing: 2px;
+	text-shadow: 5px 5px 10px greenyellow;
+}

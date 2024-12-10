@@ -1,0 +1,19 @@
+.task_board {
+    border: var(--border-dev);
+    border-radius: 0.8rem;
+
+    padding: 1rem;
+    min-height: 30rem;
+}
+
+.task_board_type {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.task_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}

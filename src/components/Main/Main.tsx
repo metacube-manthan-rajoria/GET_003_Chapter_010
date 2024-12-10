@@ -1,3 +1,4 @@
+import "./Main.css"
 import TaskBoard from "../UI/TaskBoard"
 
 const Main = () => {

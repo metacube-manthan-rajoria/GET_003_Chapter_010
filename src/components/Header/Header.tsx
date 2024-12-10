@@ -1,3 +1,4 @@
+import "./Header.css"
 import NewTaskDropdown from "../UI/NewTaskDropdown";
 
 const Header = () => {
@@ -25,8 +26,8 @@ const Header = () => {
 			>
 				Add New Task
 			</button>
-
-			<NewTaskDropdown display=""></NewTaskDropdown>
+{/* 
+			<NewTaskDropdown display=""></NewTaskDropdown> */}
 		</header>
 	);
 };

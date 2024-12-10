@@ -1,0 +1,21 @@
+header {
+	display: grid;
+	align-self: start;
+}
+
+header>h1 {
+	margin: 0;
+	font-size: 3rem;
+	justify-self: center;
+}
+
+#add_task_button {
+	margin: 0rem 1rem;
+	margin-top: 0.5rem;
+
+	height: 5rem;
+	border-radius: 1rem;
+
+	font-size: 1.3rem;
+	letter-spacing: 3px;
+}
