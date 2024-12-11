@@ -1,4 +1,5 @@
 export default interface ITask {
+    key: string,
     title: string,
     note: string,
     status: string,
