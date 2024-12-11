@@ -1,19 +1,22 @@
 import "./TaskBoard.css";
 import Task from "./Task";
+import ITask from "../../assets/ITask";
 
 const TaskBoard = (props: any) => {
-  return (
-    <div className="task_board">
-      <span className="task_board_type">{props.type}</span>
-      <ul className="task_list">
-        <Task></Task>
-        <Task></Task>
-        <Task></Task>
-        <Task></Task>
-        <Task></Task>
-      </ul>
-    </div>
-  );
+	return (
+		<div className="task_board">
+			<span className="task_board_type">{props.type}</span>
+			<ul className="task_list">
+				{
+					(props.tasksList as ITask[]).map(
+						(task: ITask) => {
+							return <Task taskMetaData={props.tasksList} key={props.tasksList.length}/>
+						}
+					)
+				}
+			</ul>
+		</div>
+	);
 };
 
 export default TaskBoard;

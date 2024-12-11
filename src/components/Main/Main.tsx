@@ -1,14 +1,21 @@
 import "./Main.css"
 import TaskBoard from "../UI/TaskBoard"
+import ITask from "../../assets/ITask";
 
-const Main = () => {
-    let boardTypes: string[] = ["New Task", "In Progress", "Completed"];
+const Main = (props: any) => {
+    const boardTypes: string[][] = [["New Task", "new"], ["In Progress", "inprogress"], ["Completed", "complete"]];
     return (
         <main>
             <div id="task_board_wrapper">
                 {
                     boardTypes.map(
-                        (boardType: string) => <TaskBoard type={boardType} key={boardType}/>
+                        (boardType: string[]) => {
+                            return <TaskBoard 
+                                type={boardType[0]} 
+                                key={boardType[0]} 
+                                tasksList={(props.tasks as ITask[]).filter(task => {task.status === boardType[1]})}
+                                />
+                        }
                     )
                 }
             </div>
