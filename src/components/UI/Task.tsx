@@ -29,8 +29,12 @@ const Task = (props: any) => {
 	return (
 		<div className={"note " + borderClass}>
 			<cite>{noteData.title??""}</cite>
-			<span></span>
+			<span>{noteData.date} {noteData.time}</span>
 			<p>{noteData.note??"null"}</p>
+			<div className="note_buttons">
+				<button className="edit_note">⚙️🖋️🖊️🖍️✏️✒️📝⭕</button>
+				<button className="delete_note">❌</button>
+			</div>
 		</div>
 	)
 }
