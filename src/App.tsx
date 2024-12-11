@@ -38,12 +38,12 @@ function App() {
 	// Toggle Mode
 	let toggleMode = () => {
 		// Reverting Mode
-		setDarkMode((darkMode)=>{return !darkMode});
+		setDarkMode(!darkMode);
 
 		let rootStyle: HTMLElement | null = document.querySelector(":root");
 		if(rootStyle == null) return;
 
-		if(darkMode){
+		if(!darkMode){
 			rootStyle.style.setProperty("--border-dev", "1px solid white");
 			rootStyle.style.setProperty("--button-color", "white");
 			rootStyle.style.setProperty("--button-bgcolor", "black");
