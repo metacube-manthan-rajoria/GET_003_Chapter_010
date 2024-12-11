@@ -1,7 +1,7 @@
 import "./NewTaskDropdown.css"
 import { useRef } from "react";
 
-const NewTaskDropdown = (props: any) => {
+const EditTaskDropdown = (props: any) => {
     let taskTitle = useRef(null);
     let taskNote = useRef(null);
     let taskStatus = useRef(null);
@@ -9,7 +9,7 @@ const NewTaskDropdown = (props: any) => {
     let taskDate = useRef(null);
     let taskTime = useRef(null);
 
-    let addTask = () => {
+    let save = () => {
         let title = taskTitle.current ? (taskTitle.current as HTMLInputElement).value : "";
         let note = taskNote.current ? (taskNote.current as HTMLInputElement).value : "";
         let status = taskStatus.current ? (taskStatus.current as HTMLInputElement).value : "new";
@@ -17,7 +17,7 @@ const NewTaskDropdown = (props: any) => {
         let date = taskDate.current ? (taskDate.current as HTMLInputElement).value : "";
         let time = taskTime.current ? (taskTime.current as HTMLInputElement).value : "";
 
-        props.addNewTask(title, note, status, priority, date, time);
+        props.saveTask(title, note, status, priority, date, time);
     }
 
     return (
@@ -46,12 +46,12 @@ const NewTaskDropdown = (props: any) => {
                 <textarea name="" ref={taskNote} id="new_task_note" className="flat new_task_dialog_element" placeholder="Write a note..."></textarea>
 
                 <div id="new_task_dialog_button_wrapper" className="new_task_dialog_element">
-                    <button type="button" id="new_task_cancel_button" className="flat_button" onClick={props.cancelTask}>Cancel</button>
-                    <button type="button" id="new_task_add_button" className="flat_button" onClick={addTask}>Save</button>
+                    <button type="button" id="new_task_cancel_button" className="flat_button" onClick={props.cancelEdit}>Cancel</button>
+                    <button type="button" id="new_task_add_button" className="flat_button" onClick={save}>Save</button>
                 </div>
             </form>
         </div>
     );
 };
 
-export default NewTaskDropdown;
+export default EditTaskDropdown;
