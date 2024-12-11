@@ -5,10 +5,8 @@ import ITask from "../../assets/ITask";
 const Main = (props: any) => {
     const boardTypes: string[][] = [["New Task", "new"], ["In Progress", "inprogress"], ["Completed", "complete"]];
 
-    let emitDeleteNote = (key: string) => {
-        props.deleteNote(key);
-    }
-
+    let emitDeleteNote = (key: string) => props.deleteNote(key);
+    
     return (
         <main>
             <div id="task_board_wrapper">

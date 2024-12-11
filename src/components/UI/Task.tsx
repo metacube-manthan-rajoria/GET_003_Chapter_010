@@ -25,9 +25,7 @@ const Task = (props: any) => {
 			break;
 	}
 
-	let deleteNoteEvent = () => {
-		props.deleteNote(noteData.key);
-	}
+	let deleteNoteEvent = () => props.deleteNote(noteData.key);
 
 	return (
 		<div className={"note " + borderClass}>
