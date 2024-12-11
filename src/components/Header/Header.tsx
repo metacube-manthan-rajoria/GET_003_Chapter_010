@@ -19,8 +19,9 @@ const Header = (props: any) => {
 		date: string, 
 		time: string
 	) => {
+		let key = Date.now().toString();
 		props.addNote({
-			title, note, date, time, status, priority
+			title, note, date, time, status, priority, key
 		});
 		setNewTaskDialogVisible(false);
 	}

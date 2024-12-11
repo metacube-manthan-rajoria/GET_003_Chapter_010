@@ -10,7 +10,7 @@ const TaskBoard = (props: any) => {
 				{
 					(props.tasksList as ITask[]).map(
 						(task: ITask) => {
-							return <Task taskMetaData={task} key={props.tasksList.length}/>
+							return <Task taskMetaData={task} key={task.key}/>
 						}
 					)
 				}
