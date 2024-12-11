@@ -36,10 +36,7 @@ function App() {
 	}
 
 	// Toggle Mode
-	let toggleMode = () => {
-		// Reverting Mode
-		setDarkMode(!darkMode);
-
+	let changeTheme = () => {
 		let rootStyle: HTMLElement | null = document.querySelector(":root");
 		if(rootStyle == null) return;
 
@@ -56,6 +53,12 @@ function App() {
 			rootStyle.style.setProperty("--bg-color", "white");
 			rootStyle.style.setProperty("--text-color", "black");
 		}
+	}
+
+	let toggleMode = () => {
+		// Reverting Mode
+		setDarkMode(!darkMode);
+		changeTheme();
 	}
 
 	return (
