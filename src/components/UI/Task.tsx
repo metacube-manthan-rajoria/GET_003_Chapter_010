@@ -2,7 +2,7 @@ import "./Task.css"
 import ITask from "../../assets/ITask"
 
 const Task = (props: any) => {
-	let noteData = props.noteMetaData;
+	let noteData = props.taskMetaData;
 
 	return (
 		<div className="note">

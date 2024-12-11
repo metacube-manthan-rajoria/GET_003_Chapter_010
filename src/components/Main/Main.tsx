@@ -4,6 +4,7 @@ import ITask from "../../assets/ITask";
 
 const Main = (props: any) => {
     const boardTypes: string[][] = [["New Task", "new"], ["In Progress", "inprogress"], ["Completed", "complete"]];
+
     return (
         <main>
             <div id="task_board_wrapper">
@@ -13,7 +14,7 @@ const Main = (props: any) => {
                             return <TaskBoard 
                                 type={boardType[0]} 
                                 key={boardType[0]} 
-                                tasksList={(props.tasks as ITask[]).filter(task => {task.status === boardType[1]})}
+                                tasksList={(props.tasks as ITask[]).filter(task => task.status === boardType[1])}
                                 />
                         }
                     )
