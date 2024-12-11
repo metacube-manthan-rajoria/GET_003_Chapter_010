@@ -3,6 +3,8 @@ import { useState } from "react";
 import NewTaskDropdown from "../UI/NewTaskDropdown";
 
 const Header = (props: any) => {
+	// Toggle Mode
+	let toggleModeEvent = () => props.toggleMode();
 	// Mouse Animation Effect
 	let mouseDownAnimation = (e: Event) => {
 		(e.target as HTMLElement).style.scale = "0.98";
@@ -28,13 +30,11 @@ const Header = (props: any) => {
 		});
 		setNewTaskDialogVisible(false);
 	}
-	let newTaskCancel = () => {
-		setNewTaskDialogVisible(false)
-	}
+	let newTaskCancel = () => setNewTaskDialogVisible(false);
 
 	return (
 		<header>
-			<h1>
+			<h1 onClick={toggleModeEvent}>
 				Kanban 
 			</h1>
 			<button 

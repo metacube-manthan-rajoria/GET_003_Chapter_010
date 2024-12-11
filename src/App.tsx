@@ -10,6 +10,7 @@ function App() {
 	// Initialise data from local storage
 	const localData = localStorage.getItem("GET_003_Chapter_010");
 	const sessionData = localData ? JSON.parse(localData) : [];
+	const [darkMode, setDarkMode] = useState(false);
 	
 	let [tasks, setTasks]: [any, any] = useState(sessionData);
 
@@ -34,9 +35,32 @@ function App() {
 		localStorage.setItem("GET_003_Chapter_010", JSON.stringify(updatedTaskArray));
 	}
 
+	// Toggle Mode
+	let toggleMode = () => {
+		// Reverting Mode
+		setDarkMode((darkMode)=>{return !darkMode});
+
+		let rootStyle: HTMLElement | null = document.querySelector(":root");
+		if(rootStyle == null) return;
+
+		if(darkMode){
+			rootStyle.style.setProperty("--border-dev", "1px solid white");
+			rootStyle.style.setProperty("--button-color", "white");
+			rootStyle.style.setProperty("--button-bgcolor", "black");
+			rootStyle.style.setProperty("--bg-color", "black");
+			rootStyle.style.setProperty("--text-color", "white");
+		}else{
+			rootStyle.style.setProperty("--border-dev", "1px solid black");
+			rootStyle.style.setProperty("--button-color", "black");
+			rootStyle.style.setProperty("--button-bgcolor", "white");
+			rootStyle.style.setProperty("--bg-color", "white");
+			rootStyle.style.setProperty("--text-color", "black");
+		}
+	}
+
 	return (
 		<>
-			<Header addNote={addData}></Header>
+			<Header addNote={addData} toggleMode={toggleMode}></Header>
 			<Main tasks={tasks} deleteNote={deleteNote}></Main>
 			<Footer></Footer>
 		</>

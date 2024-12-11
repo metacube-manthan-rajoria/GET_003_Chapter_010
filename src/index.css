@@ -9,6 +9,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --bg-color: white;
+  --text-color: black;
   --button-color: rgb(0, 0, 0);
   --button-bgcolor: white;
 }
@@ -16,6 +18,8 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 @media (prefers-color-scheme: dark) {
