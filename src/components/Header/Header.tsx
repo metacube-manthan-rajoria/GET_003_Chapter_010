@@ -2,7 +2,7 @@ import "./Header.css"
 import { useState } from "react";
 import NewTaskDropdown from "../UI/NewTaskDropdown";
 
-const Header = () => {
+const Header = (props: any) => {
 	let mouseDownAnimation = (e: Event) => {
 		(e.target as HTMLElement).style.scale = "0.98";
 	}
@@ -13,14 +13,16 @@ const Header = () => {
 	let [newTaskDialogVisible, setNewTaskDialogVisible] = useState(false);
 	let addTaskToList = (
 		title:string, 
-		note: string, 
+		note: string,
 		status: string, 
 		priority: string, 
 		date: string, 
 		time: string
 	) => {
-		console.log(title, note, date, time, status, priority)
-		setNewTaskDialogVisible(false)
+		props.addNote({
+			title, note, date, time, status, priority
+		});
+		setNewTaskDialogVisible(false);
 	}
 	let newTaskCancel = () => {
 		setNewTaskDialogVisible(false)
