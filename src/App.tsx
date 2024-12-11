@@ -7,11 +7,17 @@ import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
 
 function App() {
-	const [tasks, setTasks] : [any, any]= useState([]);
+	const localData = localStorage.getItem("GET_003_Chapter_010");
+	const sessionData = localData ? JSON.parse(localData) : [];
+	
+	let [tasks, setTasks]: [any, any] = useState(sessionData);
 
-	const addData = (data : ITask) => {
-		let newTaskArray = [...tasks, data];
+	let addData = (newNote : ITask) => {
+		if(newNote.title === "" && newNote.note === "") return;
+		let newTaskArray = [...tasks, newNote];
 		setTasks(newTaskArray);
+
+		localStorage.setItem("GET_003_Chapter_010", JSON.stringify(newTaskArray));
 	}
 
 	return (

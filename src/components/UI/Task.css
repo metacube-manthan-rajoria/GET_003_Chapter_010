@@ -17,6 +17,7 @@
 .note > cite {
     font-size: 1.3rem;
     font-weight: 700;
+    font-style: normal;
 }
 
 .note > span {
@@ -45,11 +46,11 @@
 }
 
 .priority-normal {
-    border: var(--note-border-width) yellow;
+    border: var(--note-border-width) cornflowerblue;
     transition: background-color 0.4s;
 }
 .priority-normal:hover {
-    background-color: rgba(255, 255, 0, 0.05);
+    background-color: rgba(100, 148, 237, 0.1);
 }
 
 .priority-low {
