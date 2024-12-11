@@ -3,6 +3,7 @@ import { useState } from "react";
 import NewTaskDropdown from "../UI/NewTaskDropdown";
 
 const Header = (props: any) => {
+	// Mouse Animation Effect
 	let mouseDownAnimation = (e: Event) => {
 		(e.target as HTMLElement).style.scale = "0.98";
 	}
@@ -11,6 +12,8 @@ const Header = (props: any) => {
 	}
 
 	let [newTaskDialogVisible, setNewTaskDialogVisible] = useState(false);
+
+	// New Task Dialog Add / Cancel Button Functions
 	let addTaskToList = (
 		title:string, 
 		note: string,

@@ -10,7 +10,7 @@
     transition: scale 0.4s, border-width 0.4s;
 }
 .note:hover {
-    scale: 1.05;
+    scale: 1.03;
     border-width: var(--note-border-hover-width);
 }
 

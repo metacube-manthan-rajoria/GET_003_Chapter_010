@@ -1,5 +1,4 @@
 import "./Task.css"
-import ITask from "../../assets/ITask"
 
 const Task = (props: any) => {
 	let noteData = props.taskMetaData;
@@ -26,14 +25,18 @@ const Task = (props: any) => {
 			break;
 	}
 
+	let deleteNoteEvent = () => {
+		props.deleteNote(noteData.key);
+	}
+
 	return (
 		<div className={"note " + borderClass}>
 			<cite>{noteData.title??""}</cite>
 			<span>{noteData.date} {noteData.time}</span>
 			<p>{noteData.note??"null"}</p>
 			<div className="note_buttons">
-				<button className="edit_note">⚙️🖋️🖊️🖍️✏️✒️📝⭕</button>
-				<button className="delete_note">❌</button>
+				<button className="edit_note">✒️</button> 
+				<button className="delete_note" onClick={deleteNoteEvent}>❌</button>
 			</div>
 		</div>
 	)
