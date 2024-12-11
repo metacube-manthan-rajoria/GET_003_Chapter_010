@@ -5,6 +5,7 @@ import ITask from "../../assets/ITask";
 const Main = (props: any) => {
     const boardTypes: string[][] = [["New Task", "new"], ["In Progress", "inprogress"], ["Completed", "complete"]];
 
+    let emitEditNote = (key: string) => props.editNote(key);
     let emitDeleteNote = (key: string) => props.deleteNote(key);
     
     return (
@@ -17,6 +18,7 @@ const Main = (props: any) => {
                                 type={boardType[0]} 
                                 key={boardType[0]} 
                                 tasksList={(props.tasks as ITask[]).filter(task => task.status === boardType[1])}
+                                emitEditNote={emitEditNote}
                                 emitDeleteNote={emitDeleteNote}
                                 />
                         }

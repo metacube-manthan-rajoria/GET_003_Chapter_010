@@ -3,6 +3,7 @@ import Task from "./Task";
 import ITask from "../../assets/ITask";
 
 const TaskBoard = (props: any) => {
+	let editNote = (key: string) => props.emitEditNote(key);
 	let deleteNote = (key: string) => props.emitDeleteNote(key);
 	
 	return (
@@ -12,7 +13,7 @@ const TaskBoard = (props: any) => {
 				{
 					(props.tasksList as ITask[]).map(
 						(task: ITask) => {
-							return <Task taskMetaData={task} key={task.key} deleteNote={deleteNote}/>
+							return <Task taskMetaData={task} key={task.key} editNote={editNote} deleteNote={deleteNote}/>
 						}
 					)
 				}
