@@ -4,10 +4,12 @@
 }
 
 .note {
+    box-sizing: border-box;
     margin-bottom: 1rem;
     padding: 0.5rem;
     border-radius: 0.5rem;
-    transition: scale 0.4s, border-width 0.4s;
+    width: calc((98vw - 12rem)/ 3);
+    transition: scale 0.2s, border-width 0.3s, background-color 0.4s;;
 }
 .note:hover {
     scale: 1.03;
@@ -46,7 +48,6 @@
 /* Priority Classes */
 .priority-highest {
     border: var(--note-border-width) red;
-    transition: background-color 0.4s;
 }
 .priority-highest:hover {
     background-color: rgba(255, 0, 0, 0.05);
@@ -54,7 +55,6 @@
 
 .priority-high {
     border: var(--note-border-width) orange;
-    transition: background-color 0.4s;
 }
 .priority-high:hover {
     background-color: rgba(255, 166, 0, 0.05);
@@ -62,7 +62,6 @@
 
 .priority-normal {
     border: var(--note-border-width) cornflowerblue;
-    transition: background-color 0.4s;
 }
 .priority-normal:hover {
     background-color: rgba(100, 148, 237, 0.1);
@@ -70,7 +69,6 @@
 
 .priority-low {
     border: var(--note-border-width) lightgreen;
-    transition: background-color 0.4s;
 }
 .priority-low:hover {
     background-color: rgba(144, 238, 144, 0.05);
@@ -78,7 +76,6 @@
 
 .priority-lowest {
     border: var(--note-border-width) limegreen;
-    transition: background-color 0.4s;
 }
 .priority-lowest:hover {
     background-color: rgba(50, 205, 50, 0.05);
@@ -86,8 +83,14 @@
 
 .priority-none {
     border: var(--note-border-width) gray;
-    transition: background-color 0.4s;
 }
 .priority-none:hover {
     background-color: rgba(128, 128, 128, 0.05);
+}
+
+/* Media Queries */
+@media screen and (max-width: 800px) {
+    .note {
+        width: calc((89.5vw - 9rem)/ 2);
+    }
 }
