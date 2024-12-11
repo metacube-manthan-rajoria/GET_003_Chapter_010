@@ -9,7 +9,7 @@
     padding: 0.5rem;
     border-radius: 0.5rem;
     width: calc((98vw - 12rem)/ 3);
-    transition: scale 0.2s, border-width 0.3s, background-color 0.4s;;
+    transition: scale 0.2s, border-width 0.2s, background-color 0.2s;;
 }
 .note:hover {
     scale: 1.03;
@@ -20,12 +20,17 @@
     font-size: 1.3rem;
     font-weight: 700;
     font-style: normal;
+
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .note > span {
+    display: block;
     font-size: 0.5rem;
-    color: gray;
     font-weight: 400;
+    color: gray;
 }
 
 .note > p {
@@ -91,6 +96,6 @@
 /* Media Queries */
 @media screen and (max-width: 800px) {
     .note {
-        width: calc((89.5vw - 9rem)/ 2);
+        width: calc((97vw - 9rem)/ 2);
     }
 }
