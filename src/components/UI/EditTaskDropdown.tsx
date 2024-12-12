@@ -9,12 +9,12 @@ const EditTaskDropdown = (props: any) => {
     let taskDate = useRef(null);
     let taskTime = useRef(null);
 
-    let [title, setTitle] = useState(props.data.title);
-    let [note, setNote] = useState(props.data.note);
-    let [status, setStatus] = useState(props.data.status);
-    let [priority, setPriority] = useState(props.data.priority);
-    let [date, setDate] = useState(props.data.date === "" ? new Date() : props.data.date);
-    let [time, setTime] = useState(props.data.time);
+    let [titleBind, setTitle] = useState(props.data.title);
+    let [noteBind, setNote] = useState(props.data.note);
+    let [statusBind, setStatus] = useState(props.data.status);
+    let [priorityBind, setPriority] = useState(props.data.priority);
+    let [dateBind, setDate] = useState(props.data.date === "" ? new Date() : props.data.date);
+    let [timeBind, setTime] = useState(props.data.time);
 
     let save = () => {
         let title = taskTitle.current ? (taskTitle.current as HTMLInputElement).value : "";
@@ -37,7 +37,7 @@ const EditTaskDropdown = (props: any) => {
                     id="new_task_title" 
                     className="flat new_task_dialog_element" 
                     placeholder="Note Title" 
-                    value={title}
+                    value={titleBind}
                     onChange={(e)=>setTitle(e.target.value)}
                 />
 
@@ -48,7 +48,7 @@ const EditTaskDropdown = (props: any) => {
                         ref={taskDate} 
                         id="" 
                         className="flat" 
-                        value={Date.parse(date)}
+                        value={Date.parse(dateBind)}
                         onChange={(e)=>setDate(e.target.value)}
                     />
                     <input 
@@ -56,15 +56,15 @@ const EditTaskDropdown = (props: any) => {
                         name="new_task_time" 
                         ref={taskTime} 
                         id="" 
-                        value={time}
+                        value={timeBind}
                         onChange={(e)=>setTime(e.target.value)}
                     />
-                    <select name="" ref={taskStatus} id="" className="flat" value={status} onChange={(e)=>setStatus(e.target.value)}>
+                    <select name="" ref={taskStatus} id="" className="flat" value={statusBind} onChange={(e)=>setStatus(e.target.value)}>
                         <option value="new">New</option>
                         <option value="inprogress">In Progress</option>
                         <option value="complete">Completed</option>
                     </select>
-                    <select name="" ref={taskPriority} id="" className="flat" value={priority} onChange={(e)=>setPriority(e.target.value)}>
+                    <select name="" ref={taskPriority} id="" className="flat" value={priorityBind} onChange={(e)=>setPriority(e.target.value)}>
                         <option value="highest">Highest</option>
                         <option value="high">High</option>
                         <option value="normal">Normal</option>
@@ -80,7 +80,7 @@ const EditTaskDropdown = (props: any) => {
                     id="new_task_note" 
                     className="flat new_task_dialog_element" 
                     placeholder="Write a note..." 
-                    value={note}
+                    value={noteBind}
                     onChange={(e)=>setNote(e.target.value)}
                 ></textarea>
 
