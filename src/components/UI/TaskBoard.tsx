@@ -10,15 +10,15 @@ const TaskBoard = (props: any) => {
 		e.preventDefault();
         let noteId = e.dataTransfer.getData("taskId");
 		let noteNode = document.getElementById(noteId);
-		let board = document.getElementById(props.type);
+		let board = document.getElementById(props.type + "List");
 		if(noteNode == null) return;
         board!.appendChild(noteNode);
 	}
 	
 	return (
-		<div id={props.type} className="task_board" onDrop={onDrop} onDragOver={(e) => e.preventDefault()}>
+		<div className="task_board" onDrop={onDrop} onDragOver={(e) => e.preventDefault()}>
 			<span className="task_board_type">{props.type}</span>
-			<ul className="task_list">
+			<ul id={props.type + "List"} className="task_list">
 				{
 					(props.tasksList as ITask[]).map(
 						(task: ITask) => {
