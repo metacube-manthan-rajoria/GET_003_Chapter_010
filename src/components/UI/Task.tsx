@@ -36,14 +36,14 @@ const Task = (props: any) => {
 			<cite>{noteData.title??""}</cite>
 			<span>{noteData.date} {noteData.time}</span>
 			<p>{noteData.note??"null"}</p>
-			{
-				showButtons ? (
-					<div className="note_buttons ">
+			<div className="note_buttons ">
+				{
+					showButtons ? (
 						<button className="edit_note" onClick={editNoteEvent}>✒️</button>
-						<button className="delete_note" onClick={deleteNoteEvent}>❌</button>
-					</div>
-				) : ""
-			}
+					) : ""
+				}
+				<button className="delete_note" onClick={deleteNoteEvent}>❌</button>
+			</div>
 		</div>
 	)
 }
