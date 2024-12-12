@@ -77,6 +77,7 @@ function App() {
 		});
 
 		setTasks(updatedTasks)
+		//localStorage.setItem("GET_003_Chapter_010", JSON.stringify(updatedTasks));
 		setEditTaskDialogVisible(false);
 	}
 	let cancelEdit = () => setEditTaskDialogVisible(false);

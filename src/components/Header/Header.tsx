@@ -17,11 +17,11 @@ const Header = (props: any) => {
 
 	// New Task Dialog Add / Cancel Button Functions
 	let addTaskToList = (
-		title:string, 
+		title:string,
 		note: string,
-		status: string, 
-		priority: string, 
-		date: string, 
+		status: string,
+		priority: string,
+		date: string,
 		time: string
 	) => {
 		let key = Date.now().toString();
