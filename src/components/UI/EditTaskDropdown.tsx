@@ -13,7 +13,7 @@ const EditTaskDropdown = (props: any) => {
     let [note, setNote] = useState(props.data.note);
     let [status, setStatus] = useState(props.data.status);
     let [priority, setPriority] = useState(props.data.priority);
-    let [date, setDate] = useState(props.data.date);
+    let [date, setDate] = useState(props.data.date === "" ? new Date() : props.data.date);
     let [time, setTime] = useState(props.data.time);
 
     let save = () => {

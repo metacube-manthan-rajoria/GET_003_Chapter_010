@@ -8,13 +8,14 @@ import Footer from "./components/Footer/Footer";
 import EditTaskDropdown from "./components/UI/EditTaskDropdown";
 
 function App() {
-	// Initialise data from local storage
+	// Initializing data from local storage
 	const localData = localStorage.getItem("GET_003_Chapter_010");
 	const sessionData = localData ? JSON.parse(localData) : [];
 
 	let [darkMode, setDarkMode] = useState(false);
 	let [tasks, setTasks]: [any, any] = useState(sessionData);
 	let [editTaskDialogVisible, setEditTaskDialogVisible] = useState(false);
+	let [taskToEdit, setTaskToEdit] = useState({});									// Temp variable for holding task to edit
 
 	// Add, Edit and Delete Functions
 	let addData = (newNote : ITask) => {
@@ -27,8 +28,7 @@ function App() {
 		// Save to local storage
 		localStorage.setItem("GET_003_Chapter_010", JSON.stringify(newTaskArray));
 	}
-
-	let [taskToEdit, setTaskToEdit] = useState({});
+	
 	let editNote = (key: string) => {
 		let selectedTask = tasks.filter((task: ITask) => {
 			return task.key === key;
@@ -58,11 +58,25 @@ function App() {
 		date: string, 
 		time: string
 	) => {
-		let selectedTask = tasks.filter((task: ITask) => {
-			if(task.key == key){
-				task.time = title;
+		const updatedTasks: ITask[] = tasks.map((task: ITask) => {
+			if (task.key === key) {
+				return {
+					key,
+					title,
+					note,
+					status,
+					priority,
+					date,
+					time
+				};
+			} else {
+				return {
+					...task
+				};
 			}
-		})[0];
+		});
+
+		setTasks(updatedTasks)
 		setEditTaskDialogVisible(false);
 	}
 	let cancelEdit = () => setEditTaskDialogVisible(false);
@@ -96,7 +110,9 @@ function App() {
 	return (
 		<>
 			{
-				editTaskDialogVisible ? <EditTaskDropdown data={taskToEdit} saveTask={saveTaskToList} cancelEdit={cancelEdit}></EditTaskDropdown> : ""
+				editTaskDialogVisible ? (
+					<EditTaskDropdown data={taskToEdit} saveTask={saveTaskToList} cancelEdit={cancelEdit}/>
+				) : ""
 			}
 			<Header addNote={addData} toggleMode={toggleMode}></Header>
 			<Main tasks={tasks} editNote={editNote} deleteNote={deleteNote}></Main>
