@@ -25,6 +25,8 @@ const Task = (props: any) => {
 			break;
 	}
 
+	let showButtons = noteData.status === "complete" ? false : true;
+
 	let editNoteEvent = () => props.editNote(noteData.key);
 	let deleteNoteEvent = () => props.deleteNote(noteData.key);
 
@@ -33,10 +35,14 @@ const Task = (props: any) => {
 			<cite>{noteData.title??""}</cite>
 			<span>{noteData.date} {noteData.time}</span>
 			<p>{noteData.note??"null"}</p>
-			<div className="note_buttons">
-				<button className="edit_note" onClick={editNoteEvent}>✒️</button> 
-				<button className="delete_note" onClick={deleteNoteEvent}>❌</button>
-			</div>
+			{
+				showButtons ? (
+					<div className="note_buttons ">
+						<button className="edit_note" onClick={editNoteEvent}>✒️</button>
+						<button className="delete_note" onClick={deleteNoteEvent}>❌</button>
+					</div>
+				) : ""
+			}
 		</div>
 	)
 }
