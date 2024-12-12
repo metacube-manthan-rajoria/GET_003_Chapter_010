@@ -29,9 +29,10 @@ const Task = (props: any) => {
 
 	let editNoteEvent = () => props.editNote(noteData.key);
 	let deleteNoteEvent = () => props.deleteNote(noteData.key);
+	let dragStartEvent = (e: any) => e.dataTransfer.setData("taskId", e.target.id);
 
 	return (
-		<div className={"note " + borderClass}>
+		<div id={noteData.key} className={"note " + borderClass} draggable="true" onDragStart={dragStartEvent}>
 			<cite>{noteData.title??""}</cite>
 			<span>{noteData.date} {noteData.time}</span>
 			<p>{noteData.note??"null"}</p>
